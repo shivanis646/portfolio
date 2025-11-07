@@ -215,7 +215,12 @@ body {
 .profile-img {
   width: 250px;
   border-radius: 50%;
-  border: 4px solid #38bdf8;
+  border: 1px solid #38bdf8;
+}
+.profile-img:hover{
+  transform: translateY(-8px);
+  background: #334155;
+  transition: transform 0.3s ease, background 0.3s ease;
 }
 .about-text {
   max-width: 1000px;
@@ -337,23 +342,29 @@ body {
   padding: 100px 5%;
   background-color: #0f172a;
 }
+
 .skills h1 {
   color: #38bdf8;
-  margin-bottom: 100px;  
+  margin-bottom: 60px;
 }
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-  gap: 100px;
-  margin-top: 30px;
+
+/* stack technical first, then soft */
+.skills-container {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  align-items: center;   /* ✅ This centers the boxes horizontally */
 }
 
 .skills-box {
   background: #14203c;
-  padding: 25px;
+  padding: 30px;
   border-radius: 15px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 40px;
+  width: 50%;      
+  margin-left: 25%;   
 }
 
 .skills-box:hover {
@@ -361,21 +372,37 @@ body {
   box-shadow: 0 6px 18px rgba(0,0,0,0.4);
 }
 
-.skills-box h1 {
+.skills-box h2 {
   color: #38bdf8;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
-.skill {
-  margin-bottom: 15px;
-  text-align: left;
+/* pill badges */
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: start;
 }
 
-.skill p {
-  margin: 0 0 6px 0;
-  color: #f1f5f9;
-  line-height: 2;
+.skills-list span {
+  background: #1e293b;
+  padding: 8px 18px;
+  border-radius: 20px;
+  color: #e2e8f0;
+  font-size: 14px;
+  border: 1px solid #38bdf8;
+  transition: 0.3s ease;
 }
+
+.skills-list span:hover {
+  background: #38bdf8;
+  color: #0f172a;
+  cursor: pointer;
+}
+
+
+
 
 .bar {
   background: #334155;
